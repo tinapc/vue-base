@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <Narbar />
-    <router-view></router-view>
-  </div>
-</template>
+  <v-app>
+    <NarBar />
 
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
+</template>
 <script>
-  import Narbar from './components/Narbar';
+  import NarBar from './components/Narbar.vue';
 
   export default {
     name: 'App',
-    components: { Narbar },
+    components: { NarBar },
+    data: () => ({
+      //
+    }),
   };
 </script>
-
-<style></style>

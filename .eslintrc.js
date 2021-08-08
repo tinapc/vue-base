@@ -10,8 +10,8 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:vue/essential',
-    //'prettier',
-    //'plugin:prettier/recommended',
+    // 'prettier',
+    // 'plugin:prettier/recommended',
     'eslint:recommended',
   ],
   rules: {
@@ -25,6 +25,8 @@ module.exports = {
     indent: 'off',
     'no-shadow': 'off',
     'no-param-reassign': 'off',
-    //'prettier/prettier': ['error', { singleQuote: true, endOfLine: 'auto' }],
+    'max-len': ['error', { code: 150, ignoreStrings: true }],
+    'space-before-function-paren': 'off',
+    quotes: 'off',
   },
 };

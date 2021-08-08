@@ -1,9 +1,8 @@
-import Profile from '../components/Profile';
-import Home from '../components/Home';
-import AboutMe from '../components/AboutMe';
+const Profile = () => import('../components/Profile');
+const Home = () => import('../components/Home');
 
 export const routes = [
-  { path: '/profile/:id', component: Profile },
+  { path: '*' },
   { path: '/', component: Home },
-  { path: '/about-me', component: AboutMe },
+  { path: '/profile/:id', component: Profile },
 ];

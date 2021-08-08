@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+
 import VueRoute from 'vue-router';
 import { routes } from './routes';
+
 import App from './App.vue';
 import store from './store';
+import vuetify from './plugins/vuetify';
 
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
 Vue.use(VueRoute);
 
 const router = new VueRoute({
@@ -19,5 +19,6 @@ Vue.config.productionTip = false;
 new Vue({
   render: (h) => h(App),
   store,
-  router,
+  vuetify,
+  router
 }).$mount('#app');
