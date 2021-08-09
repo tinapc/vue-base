@@ -17,6 +17,7 @@
               md="4"
             >
               <v-text-field
+                v-model="todo.title"
                 label="Name"
                 required
               ></v-text-field>
@@ -36,6 +37,7 @@
         <v-btn
           color="blue darken-1"
           text
+          @click="saveTodo"
         >
           Save
         </v-btn>
@@ -46,9 +48,16 @@
 
 <script>
   import { mapMutations, mapState } from 'vuex';
+  import uniquid from 'uniquid';
+  import _clone from 'lodash/clone';
 
   export default {
     name: 'AddTodoFormModal',
+    data () {
+      return {
+        todo: { title: '', completed: false }
+      };
+    },
     computed: {
       ...mapState({
         showAddTodoFormModal: (state) => state.showAddTodoFormModal
@@ -56,6 +65,12 @@
     },
     methods: {
       ...mapMutations(['TOGGLE_MODAL']),
+      saveTodo () {
+        const cloneTodo = _clone(this.todo);
+        cloneTodo.id = uniquid();
+        this.$store.dispatch('todo/addTodo', cloneTodo);
+        this.todo.title = '';
+      }
     }
   };
 </script>

@@ -2,6 +2,7 @@
   <v-container>
     <h1 class="text-lg-h4 pt-15 mb-8">My ToDo List</h1>
     <v-btn
+      class="mb-6"
       color="primary"
       dark
       @click.stop="TOGGLE_MODAL('showAddTodoFormModal')"

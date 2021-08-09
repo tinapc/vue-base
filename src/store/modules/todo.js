@@ -21,16 +21,22 @@ export default {
     deleteTodo({ commit }, todoId) {
       commit('DELETE_TODO', todoId);
     },
+    addTodo({ commit }, todo) {
+      commit('ADD_TODO', todo);
+      commit('TOGGLE_MODAL', 'showAddTodoFormModal', { root: true });
+    },
   },
 
   mutations: {
+    ADD_TODO(state, todo) {
+      state.todos.push(todo);
+    },
     MARK_COMPLETE(state, todoId) {
       state.todos.map((todo) => {
         if (todo.id === todoId) todo.completed = !todo.completed;
         return todo;
       });
     },
-
     DELETE_TODO(state, todoId) {
       const newTodos = state.todos.filter((todo) => todo.id !== todoId);
       state.todos = newTodos;

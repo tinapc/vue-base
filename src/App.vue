@@ -3,7 +3,7 @@
     <NarBar />
 
     <v-main>
-      <router-view></router-view>
+      <router-view />
     </v-main>
   </v-app>
 </template>
@@ -18,3 +18,11 @@
     }),
   };
 </script>
+
+<style lang="scss">
+@media only screen and (min-width: 960px) {
+  .container {
+    max-width: 1130px;
+  }
+}
+</style>

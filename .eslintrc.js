@@ -7,13 +7,7 @@ module.exports = {
     parser: 'babel-eslint',
     sourceType: 'module',
   },
-  extends: [
-    'airbnb-base',
-    'plugin:vue/essential',
-    // 'prettier',
-    // 'plugin:prettier/recommended',
-    'eslint:recommended',
-  ],
+  extends: ['airbnb-base', 'plugin:vue/essential', 'eslint:recommended'],
   rules: {
     'comma-dangle': 'off',
     'class-methods-use-this': 'off',
